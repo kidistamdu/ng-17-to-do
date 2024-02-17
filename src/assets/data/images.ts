@@ -12,7 +12,5 @@ export class Images {
     signup: './assets/images/authpage/signup.jpg',
   };
 
-  public static readonly users: IUsers = {
-    userOne: './assets/images/authpage/profile-image.jpg',
-  };
+
 }
