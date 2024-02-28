@@ -1,23 +1,44 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, TemplateRef } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 import { CommonService } from 'src/app/_core/services/common.service';
-import { AdminRoutes } from 'src/app/admin/admin.routes';
-import { AppRoutes } from 'src/app/app.routes';
 import { Images } from 'src/assets/data/images';
-import { PublicRoutes } from '../../public.routes';
-import { AdminModalComponent } from "../../../admin/views/elements/modal/admin-modal.component";
+import { BsModalService, ModalModule } from 'ngx-bootstrap/modal';
+import { ToDoService } from 'src/app/shared/services/todo.service';
+import { FormsModule } from '@angular/forms';
+import { AddTaskComponent } from '../body/addTask/addTask.component';
 
 @Component({
     selector: 'public-header',
     standalone: true,
     templateUrl: './header.component.html',
     styleUrl: './header.component.css',
-    imports: [RouterLink, AdminModalComponent,AdminModalComponent]
+    imports: [RouterLink,FormsModule,ModalModule,AddTaskComponent]
 })
 export class PublicHeaderComponent {
   public mainLogo: string = Images.mainLogo;
-  readonly publicRoutes = PublicRoutes;
-  readonly appRoutes = AppRoutes;
-  readonly adminRoutes = AdminRoutes;
-  constructor(public readonly commonService: CommonService) {}
+
+  modalRef: any;
+  taskDescription = {
+    date:"",
+   description:"",
+    priority:"",
+   status:"",
+     id:""
+}
+
+  constructor(public readonly commonService: CommonService,
+    private modalService : BsModalService,
+    private toDoService :ToDoService,
+  ) {}
+
+    openModal(template: TemplateRef<any>){ 
+    this.modalRef  = this.modalService.show(template)
+  }
+  // createTask(){
+  //   this.toDoService.createTask(this.taskDescription).subscribe(data => {
+  //      console.log(data,'cretae')
+  //   })
+  //  }
+  
+   
 }
