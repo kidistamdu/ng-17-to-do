@@ -1,21 +1,20 @@
-import { Component, Input } from '@angular/core';
-import {PublicRoutes} from "../public.routes";
-import {CommonService} from "../../_core/services/common.service";
-import {AppRoutes} from "../../app.routes";
-import {AdminRoutes} from "../../admin/admin.routes";
+import { Component } from '@angular/core';
+import {  ModalModule } from 'ngx-bootstrap/modal';
+import { RouterLink } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { NgFor, NgIf } from '@angular/common';
+import { ListTaskComponent } from '../layouts/body/listTask/listTask.component';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  standalone:true,
+  imports: [RouterLink,FormsModule,ModalModule,NgFor,NgIf,ListTaskComponent]
 })
 export class HomeComponent {
-  rowData: any = [];
-  readonly publicRoutes = PublicRoutes;
+ 
+  ngOnInit(){
 
-  constructor(public readonly commonService: CommonService) {
   }
-
-  protected readonly AppRoutes = AppRoutes;
-  protected readonly AdminRoutes = AdminRoutes;
 }

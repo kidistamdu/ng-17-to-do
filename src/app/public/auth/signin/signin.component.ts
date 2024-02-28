@@ -3,7 +3,6 @@ import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DatetimeHelper } from 'src/app/_core/helpers/datetime.helper';
 import { CommonService } from 'src/app/_core/services/common.service';
-import { AdminRoutes } from 'src/app/admin/admin.routes';
 import { AppRoutes } from 'src/app/app.routes';
 import { pageTransition } from 'src/app/shared/utils/animations';
 import { Images } from 'src/assets/data/images';
@@ -38,12 +37,6 @@ export class SigninComponent {
 
   protected onFormSubmitHandler = (event: SubmitEvent) => {
     event.preventDefault();
-
-
-    setTimeout(() => {
-    
-      this.router.navigate([AppRoutes.Admin, AdminRoutes.Dashboard]);
-    }, 3000);
   };
 
   protected onAlertCloseHandler = (e: any) => {

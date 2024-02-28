@@ -5,7 +5,6 @@ import { pageTransition } from 'src/app/shared/utils/animations';
 import { PublicRoutes } from '../../public.routes';
 import { Router } from '@angular/router';
 import { AppRoutes } from 'src/app/app.routes';
-import { AdminRoutes } from 'src/app/admin/admin.routes';
 import { Images } from 'src/assets/data/images';
 
 @Component({
@@ -28,9 +27,5 @@ export class SignupComponent {
   onFormSubmitHandler = (event: SubmitEvent) => {
     event.preventDefault();
 
-
-    setTimeout(() => {
-      this.router.navigate([AppRoutes.Admin, AdminRoutes.Dashboard]);
-    }, 3000);
   }
 }

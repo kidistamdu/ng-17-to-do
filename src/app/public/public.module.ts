@@ -7,10 +7,9 @@ import { PublicFooterComponent } from './layouts/footer/footer.component';
 import { PublicHeaderComponent } from './layouts/header/header.component';
 import { PublicRoutingModule } from './public-routing.module';
 import { PublicComponent } from './public.component';
-import { AdminDataTableComponent } from "../admin/views/elements/data-table/data-table.component";
 
 @NgModule({
-    declarations: [PublicComponent, HomeComponent],
+    declarations: [PublicComponent],
     imports: [
         CommonModule,
         PublicRoutingModule,
@@ -18,7 +17,6 @@ import { AdminDataTableComponent } from "../admin/views/elements/data-table/data
         PublicHeaderComponent,
         PublicFooterComponent,
         RouterOutlet,
-        AdminDataTableComponent
     ]
 })
 export class PublicModule {}

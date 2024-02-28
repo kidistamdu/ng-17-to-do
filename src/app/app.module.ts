@@ -4,7 +4,6 @@ import {NgModule, importProvidersFrom} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
-import {AdminModule} from './admin/admin.module';
 import {AppRoutingModule} from './app-routing.module';
 
 import {AppComponent} from './app.component';
@@ -17,6 +16,7 @@ import { provideStorage, getStorage } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -25,13 +25,13 @@ import { EffectsModule } from '@ngrx/effects';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AdminModule,
     PublicModule,
     BrowserAnimationsModule,
     HttpClientModule,
     AngularFireAuthModule,
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
+    ModalModule.forRoot()
     // AngularFireModule.initializeApp()
   ],
   providers: [

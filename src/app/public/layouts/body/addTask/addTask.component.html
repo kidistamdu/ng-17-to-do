@@ -1,0 +1,30 @@
+<div class="form-container">
+    <div class="form-wrapper">
+      <h2 class="form-title">Add Task</h2>
+      <form>
+        <div class="form-group">
+          <label for="name" class="form-label">Task</label>
+          <input type="text" name="description" [(ngModel)]="taskDescription.description" placeholder="Add Your Task" class="form-input">
+        </div>
+        <div class="form-group">
+          <label for="email" class="form-label">Day</label>
+          <input type="text" id="email" name="date"[(ngModel)]="taskDescription.date" placeholder="Add Day" class="form-input">
+        </div>
+        <div class="form-group">
+          <label for="country" class="form-label">Priority</label>
+          <select id="country" name="country" class="form-select" [(ngModel)]="taskDescription.priority">
+            <option value="high">High</option>
+            <option value="low">Low</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label  class="form-label">Status</label>
+          <select  name="status" [(ngModel)]="taskDescription.status" class="form-select">
+            <option value="true">Active</option>
+            <option value="false">Inactive</option>
+          </select>
+        </div>
+        <button type="submit" class="form-button" (click)="createTask()">Add Task</button>
+      </form>
+    </div>
+  </div>
